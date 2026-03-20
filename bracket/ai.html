@@ -407,6 +407,29 @@
     gap: 10px;
   }
 
+  .team.correct .name::before {
+    content: '\2713 ';
+    color: #22c55e;
+    font-weight: 700;
+  }
+
+  .team.wrong .name::before {
+    content: '\2717 ';
+    color: #ef4444;
+    font-weight: 700;
+  }
+
+  .team.wrong {
+    opacity: 0.45;
+  }
+
+  .team.winner.wrong {
+    background: rgba(239, 68, 68, 0.08);
+    opacity: 1;
+  }
+
+  .team.winner.wrong .seed { color: #ef4444; }
+
   @media print {
     body { background: white; color: black; }
     .header { background: white; border-bottom: 2px solid orange; }
@@ -428,7 +451,7 @@
 
 <div class="note">
   <strong>Data-driven picks</strong> based on seeds, records, conference standings, betting odds, and expert analysis. 
-  Green = predicted winner · <strong>UPSET</strong> = lower seed picked to win · First Four: UMBC def. Howard, Lehigh def. Prairie View, NC State def. Texas, Miami (OH) def. SMU
+  Green = predicted winner · <strong>UPSET</strong> = lower seed picked to win · First Four: Howard def. UMBC, Prairie View def. Lehigh, Texas def. NC State, Miami (OH) def. SMU · <span style="color:#22c55e;">1/4 correct</span>
 </div>
 
 <div class="bracket-wrap">
@@ -447,13 +470,13 @@
         <div style="font-family:Oswald; font-size:0.55rem; color:var(--muted); letter-spacing:1.5px; text-align:center; padding-bottom:4px;">R64</div>
         <!-- G1: 1v16 -->
         <div class="matchup"><div class="game">
-          <div class="team winner"><span class="seed">1</span><span class="name">Duke</span></div>
+          <div class="team winner correct"><span class="seed">1</span><span class="name">Duke</span></div>
           <div class="team loser"><span class="seed">16</span><span class="name">Siena</span></div>
         </div></div>
         <!-- G2: 8v9 -->
         <div class="matchup"><div class="game">
           <div class="team loser"><span class="seed">8</span><span class="name">Ohio State</span></div>
-          <div class="team winner"><span class="seed">9</span><span class="name">TCU <span class="upset-badge">upset</span></span></div>
+          <div class="team winner correct"><span class="seed">9</span><span class="name">TCU <span class="upset-badge">upset</span></span></div>
         </div></div>
         <!-- G3: 5v12 -->
         <div class="matchup"><div class="game">
@@ -468,11 +491,11 @@
         <!-- G5: 6v11 -->
         <div class="matchup"><div class="game">
           <div class="team loser"><span class="seed">6</span><span class="name">Louisville</span></div>
-          <div class="team winner"><span class="seed">11</span><span class="name">S. Florida <span class="upset-badge">upset</span></span></div>
+          <div class="team winner wrong"><span class="seed">11</span><span class="name">S. Florida <span class="upset-badge">upset</span></span></div>
         </div></div>
         <!-- G6: 3v14 -->
         <div class="matchup"><div class="game">
-          <div class="team winner"><span class="seed">3</span><span class="name">Michigan St.</span></div>
+          <div class="team winner correct"><span class="seed">3</span><span class="name">Michigan St.</span></div>
           <div class="team loser"><span class="seed">14</span><span class="name">N. Dakota St.</span></div>
         </div></div>
         <!-- G7: 7v10 -->
@@ -490,16 +513,16 @@
       <div class="r32" style="width:110px;">
         <div style="font-family:Oswald; font-size:0.55rem; color:var(--muted); letter-spacing:1.5px; text-align:center; padding-bottom:4px;">R32</div>
         <div class="matchup"><div class="game">
-          <div class="team winner"><span class="seed">1</span><span class="name">Duke</span></div>
-          <div class="team loser"><span class="seed">9</span><span class="name">TCU</span></div>
+          <div class="team winner correct"><span class="seed">1</span><span class="name">Duke</span></div>
+          <div class="team loser correct"><span class="seed">9</span><span class="name">TCU</span></div>
         </div></div>
         <div class="matchup"><div class="game">
           <div class="team winner"><span class="seed">4</span><span class="name">Kansas</span></div>
           <div class="team loser"><span class="seed">5</span><span class="name">St. John's</span></div>
         </div></div>
         <div class="matchup"><div class="game">
-          <div class="team winner"><span class="seed">3</span><span class="name">Michigan St.</span></div>
-          <div class="team loser"><span class="seed">11</span><span class="name">S. Florida</span></div>
+          <div class="team winner correct"><span class="seed">3</span><span class="name">Michigan St.</span></div>
+          <div class="team loser wrong"><span class="seed">11</span><span class="name">S. Florida</span></div>
         </div></div>
         <div class="matchup"><div class="game">
           <div class="team winner"><span class="seed">2</span><span class="name">UConn</span></div>
@@ -545,27 +568,27 @@
           <div class="team winner"><span class="seed">9</span><span class="name">Iowa <span class="upset-badge">upset</span></span></div>
         </div></div>
         <div class="matchup"><div class="game">
-          <div class="team winner"><span class="seed">5</span><span class="name">Vanderbilt</span></div>
+          <div class="team winner correct"><span class="seed">5</span><span class="name">Vanderbilt</span></div>
           <div class="team loser"><span class="seed">12</span><span class="name">McNeese</span></div>
         </div></div>
         <div class="matchup"><div class="game">
-          <div class="team winner"><span class="seed">4</span><span class="name">Nebraska</span></div>
+          <div class="team winner correct"><span class="seed">4</span><span class="name">Nebraska</span></div>
           <div class="team loser"><span class="seed">13</span><span class="name">Troy</span></div>
         </div></div>
         <div class="matchup"><div class="game">
-          <div class="team winner"><span class="seed">6</span><span class="name">N. Carolina</span></div>
+          <div class="team winner wrong"><span class="seed">6</span><span class="name">N. Carolina</span></div>
           <div class="team loser"><span class="seed">11</span><span class="name">VCU</span></div>
         </div></div>
         <div class="matchup"><div class="game">
-          <div class="team winner"><span class="seed">3</span><span class="name">Illinois</span></div>
+          <div class="team winner correct"><span class="seed">3</span><span class="name">Illinois</span></div>
           <div class="team loser"><span class="seed">14</span><span class="name">Penn</span></div>
         </div></div>
         <div class="matchup"><div class="game">
-          <div class="team winner"><span class="seed">7</span><span class="name">Saint Mary's</span></div>
+          <div class="team winner wrong"><span class="seed">7</span><span class="name">Saint Mary's</span></div>
           <div class="team loser"><span class="seed">10</span><span class="name">Texas A&M</span></div>
         </div></div>
         <div class="matchup"><div class="game">
-          <div class="team winner"><span class="seed">2</span><span class="name">Houston</span></div>
+          <div class="team winner correct"><span class="seed">2</span><span class="name">Houston</span></div>
           <div class="team loser"><span class="seed">15</span><span class="name">Idaho</span></div>
         </div></div>
       </div>
@@ -576,16 +599,16 @@
           <div class="team loser"><span class="seed">9</span><span class="name">Iowa</span></div>
         </div></div>
         <div class="matchup"><div class="game">
-          <div class="team loser"><span class="seed">5</span><span class="name">Vanderbilt</span></div>
-          <div class="team winner"><span class="seed">4</span><span class="name">Nebraska</span></div>
+          <div class="team loser correct"><span class="seed">5</span><span class="name">Vanderbilt</span></div>
+          <div class="team winner correct"><span class="seed">4</span><span class="name">Nebraska</span></div>
         </div></div>
         <div class="matchup"><div class="game">
-          <div class="team loser"><span class="seed">6</span><span class="name">N. Carolina</span></div>
-          <div class="team winner"><span class="seed">3</span><span class="name">Illinois</span></div>
+          <div class="team loser wrong"><span class="seed">6</span><span class="name">N. Carolina</span></div>
+          <div class="team winner correct"><span class="seed">3</span><span class="name">Illinois</span></div>
         </div></div>
         <div class="matchup"><div class="game">
-          <div class="team winner"><span class="seed">2</span><span class="name">Houston</span></div>
-          <div class="team loser"><span class="seed">7</span><span class="name">Saint Mary's</span></div>
+          <div class="team winner correct"><span class="seed">2</span><span class="name">Houston</span></div>
+          <div class="team loser wrong"><span class="seed">7</span><span class="name">Saint Mary's</span></div>
         </div></div>
       </div>
       <div class="s16" style="width:110px;">
@@ -657,7 +680,7 @@
       <div class="r64" style="width:110px;">
         <div style="font-family:Oswald; font-size:0.55rem; color:var(--muted); letter-spacing:1.5px; text-align:center; padding-bottom:4px;">R64</div>
         <div class="matchup"><div class="game">
-          <div class="team winner"><span class="seed">1</span><span class="name">Arizona</span></div>
+          <div class="team winner correct"><span class="seed">1</span><span class="name">Arizona</span></div>
           <div class="team loser"><span class="seed">16</span><span class="name">LIU</span></div>
         </div></div>
         <div class="matchup"><div class="game">
@@ -665,19 +688,19 @@
           <div class="team winner"><span class="seed">9</span><span class="name">Utah State <span class="upset-badge">upset</span></span></div>
         </div></div>
         <div class="matchup"><div class="game">
-          <div class="team winner"><span class="seed">5</span><span class="name">Wisconsin</span></div>
+          <div class="team winner wrong"><span class="seed">5</span><span class="name">Wisconsin</span></div>
           <div class="team loser"><span class="seed">12</span><span class="name">High Point</span></div>
         </div></div>
         <div class="matchup"><div class="game">
-          <div class="team winner"><span class="seed">4</span><span class="name">Arkansas</span></div>
+          <div class="team winner correct"><span class="seed">4</span><span class="name">Arkansas</span></div>
           <div class="team loser"><span class="seed">13</span><span class="name">Hawaii</span></div>
         </div></div>
         <div class="matchup"><div class="game">
           <div class="team loser"><span class="seed">6</span><span class="name">BYU</span></div>
-          <div class="team winner"><span class="seed">11</span><span class="name">NC State <span class="upset-badge">upset</span></span></div>
+          <div class="team winner wrong"><span class="seed">11</span><span class="name">NC State <span class="upset-badge">upset</span></span></div>
         </div></div>
         <div class="matchup"><div class="game">
-          <div class="team winner"><span class="seed">3</span><span class="name">Gonzaga</span></div>
+          <div class="team winner correct"><span class="seed">3</span><span class="name">Gonzaga</span></div>
           <div class="team loser"><span class="seed">14</span><span class="name">Kennesaw St.</span></div>
         </div></div>
         <div class="matchup"><div class="game">
@@ -692,16 +715,16 @@
       <div class="r32" style="width:110px;">
         <div style="font-family:Oswald; font-size:0.55rem; color:var(--muted); letter-spacing:1.5px; text-align:center; padding-bottom:4px;">R32</div>
         <div class="matchup"><div class="game">
-          <div class="team winner"><span class="seed">1</span><span class="name">Arizona</span></div>
+          <div class="team winner correct"><span class="seed">1</span><span class="name">Arizona</span></div>
           <div class="team loser"><span class="seed">9</span><span class="name">Utah State</span></div>
         </div></div>
         <div class="matchup"><div class="game">
-          <div class="team winner"><span class="seed">4</span><span class="name">Arkansas</span></div>
-          <div class="team loser"><span class="seed">5</span><span class="name">Wisconsin</span></div>
+          <div class="team winner correct"><span class="seed">4</span><span class="name">Arkansas</span></div>
+          <div class="team loser wrong"><span class="seed">5</span><span class="name">Wisconsin</span></div>
         </div></div>
         <div class="matchup"><div class="game">
-          <div class="team winner"><span class="seed">3</span><span class="name">Gonzaga</span></div>
-          <div class="team loser"><span class="seed">11</span><span class="name">NC State</span></div>
+          <div class="team winner correct"><span class="seed">3</span><span class="name">Gonzaga</span></div>
+          <div class="team loser wrong"><span class="seed">11</span><span class="name">NC State</span></div>
         </div></div>
         <div class="matchup"><div class="game">
           <div class="team winner"><span class="seed">2</span><span class="name">Purdue</span></div>
@@ -737,16 +760,16 @@
       <div class="r64" style="width:110px;">
         <div style="font-family:Oswald; font-size:0.55rem; color:var(--muted); letter-spacing:1.5px; text-align:center; padding-bottom:4px;">R64</div>
         <div class="matchup"><div class="game">
-          <div class="team winner"><span class="seed">1</span><span class="name">Michigan</span></div>
+          <div class="team winner correct"><span class="seed">1</span><span class="name">Michigan</span></div>
           <div class="team loser"><span class="seed">16</span><span class="name">UMBC</span></div>
         </div></div>
         <div class="matchup"><div class="game">
-          <div class="team winner"><span class="seed">8</span><span class="name">Georgia</span></div>
+          <div class="team winner wrong"><span class="seed">8</span><span class="name">Georgia</span></div>
           <div class="team loser"><span class="seed">9</span><span class="name">Saint Louis</span></div>
         </div></div>
         <div class="matchup"><div class="game">
           <div class="team loser"><span class="seed">5</span><span class="name">Texas Tech</span></div>
-          <div class="team winner"><span class="seed">12</span><span class="name">Akron <span class="upset-badge">upset</span></span></div>
+          <div class="team winner wrong"><span class="seed">12</span><span class="name">Akron <span class="upset-badge">upset</span></span></div>
         </div></div>
         <div class="matchup"><div class="game">
           <div class="team winner"><span class="seed">4</span><span class="name">Alabama</span></div>
@@ -757,12 +780,12 @@
           <div class="team loser"><span class="seed">11</span><span class="name">Miami (OH)</span></div>
         </div></div>
         <div class="matchup"><div class="game">
-          <div class="team winner"><span class="seed">3</span><span class="name">Virginia</span></div>
+          <div class="team winner correct"><span class="seed">3</span><span class="name">Virginia</span></div>
           <div class="team loser"><span class="seed">14</span><span class="name">Wright State</span></div>
         </div></div>
         <div class="matchup"><div class="game">
           <div class="team loser"><span class="seed">7</span><span class="name">Kentucky</span></div>
-          <div class="team winner"><span class="seed">10</span><span class="name">Santa Clara <span class="upset-badge">upset</span></span></div>
+          <div class="team winner wrong"><span class="seed">10</span><span class="name">Santa Clara <span class="upset-badge">upset</span></span></div>
         </div></div>
         <div class="matchup"><div class="game">
           <div class="team winner"><span class="seed">2</span><span class="name">Iowa State</span></div>
@@ -772,20 +795,20 @@
       <div class="r32" style="width:110px;">
         <div style="font-family:Oswald; font-size:0.55rem; color:var(--muted); letter-spacing:1.5px; text-align:center; padding-bottom:4px;">R32</div>
         <div class="matchup"><div class="game">
-          <div class="team winner"><span class="seed">1</span><span class="name">Michigan</span></div>
-          <div class="team loser"><span class="seed">8</span><span class="name">Georgia</span></div>
+          <div class="team winner correct"><span class="seed">1</span><span class="name">Michigan</span></div>
+          <div class="team loser wrong"><span class="seed">8</span><span class="name">Georgia</span></div>
         </div></div>
         <div class="matchup"><div class="game">
           <div class="team winner"><span class="seed">4</span><span class="name">Alabama</span></div>
-          <div class="team loser"><span class="seed">12</span><span class="name">Akron</span></div>
+          <div class="team loser wrong"><span class="seed">12</span><span class="name">Akron</span></div>
         </div></div>
         <div class="matchup"><div class="game">
-          <div class="team winner"><span class="seed">3</span><span class="name">Virginia</span></div>
+          <div class="team winner correct"><span class="seed">3</span><span class="name">Virginia</span></div>
           <div class="team loser"><span class="seed">6</span><span class="name">Tennessee</span></div>
         </div></div>
         <div class="matchup"><div class="game">
           <div class="team winner"><span class="seed">2</span><span class="name">Iowa State</span></div>
-          <div class="team loser"><span class="seed">10</span><span class="name">Santa Clara</span></div>
+          <div class="team loser wrong"><span class="seed">10</span><span class="name">Santa Clara</span></div>
         </div></div>
       </div>
       <div class="s16" style="width:110px;">

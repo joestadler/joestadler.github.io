@@ -5,19 +5,137 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>2026 March Madness Brackets</title>
 <style>
-  body { font-family: system-ui, sans-serif; max-width: 600px; margin: 60px auto; padding: 0 20px; background: #0a0e1a; color: #e2e8f0; }
-  h1 { margin-bottom: 24px; }
-  a { color: #f97316; text-decoration: none; font-size: 1.2rem; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; max-width: 700px; margin: 60px auto; padding: 0 20px; background: #0a0e1a; color: #e2e8f0; }
+  h1 { margin-bottom: 8px; font-size: 1.6rem; }
+  .subtitle { color: #64748b; font-size: 0.85rem; margin-bottom: 28px; }
+  a { color: #f97316; text-decoration: none; }
   a:hover { text-decoration: underline; }
   ul { list-style: none; padding: 0; }
-  li { margin: 12px 0; }
+  li { margin: 12px 0; font-size: 1.1rem; }
+  .scoreboard {
+    background: linear-gradient(135deg, #111827, #1a2233);
+    border: 1px solid #1e2d45;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+  .scoreboard h2 {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #f97316;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #1e2d45;
+  }
+  .matchup-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #1e2d4522;
+  }
+  .matchup-row:last-child { border-bottom: none; }
+  .picker-name {
+    font-weight: 600;
+    font-size: 1rem;
+    min-width: 120px;
+  }
+  .picker-name.joe { color: #f97316; }
+  .picker-name.ai { color: #3b82f6; }
+  .champ-pick {
+    color: #64748b;
+    font-size: 0.8rem;
+    min-width: 100px;
+  }
+  .score-bar-wrap {
+    flex: 1;
+    max-width: 260px;
+    margin: 0 16px;
+  }
+  .score-label {
+    font-size: 0.7rem;
+    color: #94a3b8;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .score-bar {
+    height: 8px;
+    background: #1e2d45;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .score-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s;
+  }
+  .score-fill.joe { background: linear-gradient(90deg, #f97316, #fb923c); }
+  .score-fill.ai { background: linear-gradient(90deg, #3b82f6, #60a5fa); }
+  .score-num {
+    font-weight: 700;
+    font-size: 1.1rem;
+    min-width: 60px;
+    text-align: right;
+  }
+  .updated {
+    text-align: center;
+    color: #475569;
+    font-size: 0.7rem;
+    margin-top: 20px;
+    letter-spacing: 1px;
+  }
+  .legend-note {
+    color: #64748b;
+    font-size: 0.75rem;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #1e2d45;
+    line-height: 1.6;
+  }
+  .correct-mark { color: #22c55e; font-weight: 700; }
+  .wrong-mark { color: #ef4444; font-weight: 700; }
 </style>
 </head>
 <body>
 <h1>2026 March Madness Brackets</h1>
+<div class="subtitle">Round of 64 &middot; 20 of 32 games decided</div>
+
+<div class="scoreboard">
+  <h2>Bracket Scoreboard</h2>
+
+  <div class="matchup-row">
+    <div class="picker-name joe">Joe's Picks</div>
+    <div class="score-bar-wrap">
+      <div class="score-label"><span>Round of 64</span><span>17 / 20</span></div>
+      <div class="score-bar"><div class="score-fill joe" style="width:85%"></div></div>
+    </div>
+    <div class="score-num" style="color:#f97316;">85%</div>
+  </div>
+
+  <div class="matchup-row">
+    <div class="picker-name ai">AI Picks</div>
+    <div class="score-bar-wrap">
+      <div class="score-label"><span>Round of 64</span><span>12 / 20</span></div>
+      <div class="score-bar"><div class="score-fill ai" style="width:60%"></div></div>
+    </div>
+    <div class="score-num" style="color:#3b82f6;">60%</div>
+  </div>
+
+  <div class="legend-note">
+    <span class="correct-mark">&#10003;</span> = correct pick &nbsp;&middot;&nbsp; <span class="wrong-mark">&#10007;</span> = wrong pick<br>
+    Both brackets missed: <span class="wrong-mark">VCU</span> over UNC, <span class="wrong-mark">High Point</span> over Wisconsin, <span class="wrong-mark">Texas</span> over BYU<br>
+    Joe's edge: Texas A&amp;M, Saint Louis, Texas Tech, Kentucky, Louisville (5 picks AI missed)<br>
+    First Four: both 1/4 correct (only Miami OH right) &middot; 12 games still to play
+  </div>
+</div>
+
 <ul>
-  <li><a href="joe.html">Joe's Picks</a> — Arizona</li>
-  <li><a href="ai.html">AI Picks</a> — Michigan</li>
+  <li><a href="joe.html">Joe's Picks</a> &mdash; Champion: Arizona &mdash; <strong style="color:#22c55e;">17/20</strong></li>
+  <li><a href="ai.html">AI Picks</a> &mdash; Champion: Michigan &mdash; <strong style="color:#3b82f6;">12/20</strong></li>
 </ul>
+
+<div class="updated">Updated through Round of 64 &middot; March 20, 2026</div>
 </body>
 </html>
